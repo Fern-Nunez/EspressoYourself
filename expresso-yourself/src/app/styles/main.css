@@ -1,0 +1,485 @@
+/* Landing section */
+.landing {
+    background-color: #223635;
+    height: 100vh;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;  /* Changed from -2 */
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/landing.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8FA88F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10010;
+  }
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #8FA88F;
+    display: flex;
+    z-index: 1010;
+    transition: 0.3s ease;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-list li {
+    font-size: 6rem;
+    margin-left: -20rem;
+  }
+  
+  .menu-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .menu-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Close Icon */
+  .close-icon {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+  }
+.logo{
+    padding: 15px;
+}
+
+.headline{
+    font-weight: 700;
+    font-size: 70px;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Initial color */
+    transition: background-color 0.3s ease;
+    z-index: 10000; /* Ensure it's the top layer */
+}
+
+/* Navbar style when scrolled */
+.nav.scrolled {
+    background-color: white; /* Color when scrolled */
+    color: black; /* Adjust text color to match */
+}
+
+.nav-right{
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.hero-copy{
+    padding-top: 20%;
+    padding-left: 5%;
+    width: 60%;
+}
+
+.subline{
+    padding-top: 30px;
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+.online-order-button{
+    border: 1px solid #FAC6AE;
+    color: #FAC6AE;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.online-order-button:hover{
+    background-color: #8FAC8D;
+    color: #F6F0F0;
+    border: 1px solid #8FAC8D;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/*MENU---------------------------------------------------------------------------------------------------------------------------------------*/
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative; /* Add position relative */
+    z-index: 1; /* Lower than nav */
+}
+
+
+.coffee-shop, .bagel-shop, .brownie-shop {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    transform: scale(1.5);
+    z-index: 1; /* Same as parent menu */
+}
+
+.coffee-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shop-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 2; /* Just above the image container but below nav */
+    width: 200px;
+    height: 200px;
+}
+/*about---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* About section - lower than nav */
+.about {
+    height: 100vh;
+    background-color: transparent;
+    text-align: center;
+    color: #F6F0F0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    z-index: -1;    /* Add this */
+}
+
+/* Background image - lowest */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/about.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Text content - above background but below nav */
+.about-headline {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;     /* Should be higher than background but lower than nav */
+}
+
+.about-subline {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 1.5;
+    position: relative;  /* Should be higher than background but lower than nav */
+}
+
+
+/*newsletter---------------------------------------------------------------------------------------------------------------------------------------*/
+
+.newsletter-section {
+    background-color: transparent;
+    color: #F6F0F0;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure it is above all background layers */
+}
+
+/* Background image layer */
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/newsletter.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    pointer-events: none; /* Ensures this background doesn’t interfere */
+    z-index: 1; /* Lowest layer */
+}
+
+.newsletter-copy{
+    padding-top: 15%;
+    padding-left: 5%;
+    width: 80%;
+}
+
+.new-headline{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.new-subline{
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+.email-form{
+    padding-top: 15px;
+    z-index: 2;
+}
+
+
+.email-input {
+    background-color: transparent;
+    border: 1px solid #F6F0F0;
+    width: 80%;
+    padding: 1%;
+    border-radius: 10px;
+    z-index: 10; /* Highest for interactivity */
+    pointer-events: auto; /* Ensures this element is interactive */
+    position: relative;
+}
+
+.send-button {
+    background-color: transparent;
+    border: 1px solid #FAC6AE;
+    color: #FAC6AE;
+    padding: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-left: 2%;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s ease;
+    z-index: 10; /* Highest for interactivity */
+    pointer-events: auto; /* Ensures this element is interactive */
+    position: relative;
+}
+
+.send-button:hover{
+    background-color: #8FAC8D;
+    border: 1px solid #8FA88F;
+    color: #F6F0F0;
+    font-weight: 700;
+    padding: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-left: 2%;
+    border-radius: 10px;
+}
+
+
+/*footer---------------------------------------------------------------------------------------------------------------------------------------*/
+.footer-section{
+    height: 23vh;
+    background-color: #223635;
+}
+
+.logo-footer{
+    padding: 15px;
+}
+
+.footer-divider{
+    display: flex;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    color: #F6F0F0;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 30px;
+    gap: 30px;
+}
+
+
+/* Account Dropdown Styles */
+.account-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 60px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    color: #223635;
+}
+
+.account-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.account-welcome {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.account-form-group {
+    margin-bottom: 15px;
+}
+
+.account-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #223635;
+    border-radius: 5px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.account-input:focus {
+    border-color: #8FA88F;
+}
+
+.sign-in-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #223635;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-panel-button{
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #223635;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-panel-button:hover {
+    background-color: #8FA88F;
+}
+
+
+.my-orders-button{
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #223635;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.my-orders-button:hover {
+    background-color: #8FA88F;
+}
+
+.sign-in-button:hover {
+    background-color: #8FA88F;
+}
+
+
+/* Add these new styles to your existing CSS */
+.status-message {
+    margin: -5px 0 15px 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: fadeIn 0.3s ease-in;
+    z-index: 1;
+}
+
+.status-message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    z-index: 1;
+}
+
+.status-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
